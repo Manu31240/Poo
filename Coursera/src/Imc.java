@@ -4,26 +4,35 @@
 class Patient {
     private double masse;
     private double hauteur;
-    public void init(double p, double t){
-        if (p < 0.0) p=0.0;
-        if (t<0.0) t=0.0;
-        masse =p;
-        hauteur= t;
-     }
-    public void afficher(){
-        System.out.printf("Patient : %.1f kg pour %.1f m",masse, hauteur);
+
+    public void init(double p, double t) {
+        if (p < 0.0)
+            p = 0.0;
+        if (t < 0.0)
+            t = 0.0;
+        masse = p;
+        hauteur = t;
     }
-    public double poids(){
+
+    public void afficher() {
+        System.out.printf("Patient : %.1f kg pour %.1f m", masse, hauteur);
+    }
+
+    public double poids() {
         return masse;
     }
-    public double taille(){
+
+    public double taille() {
         return hauteur;
     }
-    public double imc(){
-        if (hauteur <0.0) return 0.0;
+
+    public double imc() {
+        if (hauteur < 0.0)
+            return 0.0;
         return masse / (hauteur * hauteur);
     }
 }
+
 
 /*******************************************
  * Ne rien modifier apres cette ligne.
