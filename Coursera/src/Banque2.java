@@ -1,62 +1,72 @@
 class Client {
-	
+	private String nom;
+	private String ville;
+	private Compte c1;
+	private Compte c2;
+	private boolean masculin;
+
+	public Client(String nomClient, String villeClient, double taux1, double soldeEpargne, double taux2,
+			double soldePrive, boolean masculin) {
+		nom = nomClient;
+		ville = villeClient;
+		this.masculin = masculin;
+		c1 = new Compte(taux1, soldeEpargne);
+		c2 = new Compte(taux2, soldePrive);
+
+	}
+
+	public void afficher() {
+		if (masculin) {
+			System.out.print(" Client ");
+		} else {
+			System.out.print(" Cliente ");
+		}
+		System.out.println(nom + " de " + ville);
+		System.out.println("   Compte prive :     " + c1.getSolde());
+		System.out.println("   Compte d epargne : " + c2.getSolde());
+	}
+
+	public void boucler() {
+		c1.boucler();
+		c2.boucler();
+	}
+
 }
 
+class Compte {
+	private double solde;
+	private double taux;
 
-class Banque2 {
-
-	public static void main(String[] args) {
-		// Données pour tous les comptes privés (taux d'intérêt):
-		double taux1 = 0.01;
-		// Données pour tous les comptes d'épargne (taux d'intérêt):
-		double taux2 = 0.02;
-		// Données pour le premier client (nom et ville):
-		String nom1 = "Pedro";
-		String ville1 = "Geneve";
-		// Données pour le compte privé du premier client (solde):
-		double solde1PremierClient = 1000.0;
-		// Données pour le compte d'épargne du premier client (solde):
-		double solde2PremierClient = 2000.0;
-		// Données pour le deuxième client (nom et ville):
-		String nom2 = "Alexandra";
-		String ville2 = "Lausanne";
-		// Données pour le compte privé du deuxième client (solde):
-		double solde1DeuxiemeClient = 3000.0;
-		// Données pour le compte d'épargne du deuxième client (solde):
-		double solde2DeuxiemeClient = 4000.0;
-
-		// Afficher les données du premier client:
-		afficherClient(nom1, ville1, solde1PremierClient, solde2PremierClient);
-		// Afficher les données du deuxième client:
-		afficherClient(nom2, ville2, solde1DeuxiemeClient, solde2DeuxiemeClient);
-
-		// Bouclement du compte privé du premier client:
-		solde1PremierClient = bouclerCompte(solde1PremierClient, taux1);
-		// Bouclement du compte d'épargne du premier client:
-		solde2PremierClient = bouclerCompte(solde2PremierClient, taux2);
-		// Bouclement du compte privé du deuxième client:
-		solde1DeuxiemeClient = bouclerCompte(solde1DeuxiemeClient, taux1);
-		// Bouclement du compte d'épargne du deuxième client:
-		solde2DeuxiemeClient = bouclerCompte(solde2DeuxiemeClient, taux2);
-
-		// Afficher les données du premier client:
-		afficherClient(nom1, ville1, solde1PremierClient, solde2PremierClient);
-		// Afficher les données du deuxième client:
-		afficherClient(nom2, ville2, solde1DeuxiemeClient, solde2DeuxiemeClient);
+	public Compte(double taux, double solde) {
+		this.taux = taux;
+		this.solde = solde;
 	}
 
-	static void afficherClient(String nom, String ville,
-				double solde1, double solde2) {
-		// Cette méthode affiche les données du client
-		System.out.println("Client " + nom + " de " + ville);
-		System.out.println("   Compte prive:     " + solde1 + " francs");
-		System.out.println("   Compte d'epargne: " + solde2 + " francs");
+	//getter solde
+	public double getSolde() {
+		return solde;
 	}
 
-	static double bouclerCompte(double solde, double taux) {
-		// Cette méthode ajoute les intérêts au solde
+	public void boucler() {
 		double interets = taux * solde;
-		double nouveauSolde = solde + interets;
-		return nouveauSolde;
+		solde = solde + interets;
+	}
+}
+
+class Banque {
+	public static void main(String[] args) {
+		double taux1 = 0.01;
+		double taux2 = 0.02;
+		System.out.println("Donnees avant le bouclement des comptes:");
+		Client c1 = new Client("Pedro", "Geneve", taux1, 1000.0, taux2, 2000.0, true);
+		Client c2 = new Client("Alexandra", "Lausanne", taux1, 3000.0, taux2, 4000.0, false);
+		c1.afficher();
+		c2.afficher();
+		System.out.println("Donnees apres le bouclement des comptes:");
+		c1.boucler();
+		c2.boucler();
+		c1.afficher();
+		c2.afficher();
+
 	}
 }
