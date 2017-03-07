@@ -4,6 +4,10 @@
 # Compiled class file
 *.class
 
+# Directory for 
+classes
+Coursera\src\*.class
+
 # Log file
 *.log
 
