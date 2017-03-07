@@ -30,7 +30,7 @@ class TestCercle {
         c1.setCentre(3,4);
         c1.setRayon(2);
         System.out.println("Surface:" + c1.surface());
-        System.out.println("estInterieur:" + c1.estInterieur(1,2);
+        System.out.println("estInterieur:" + c1.estInterieur(1,2));
         
     }
 }

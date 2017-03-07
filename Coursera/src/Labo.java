@@ -32,6 +32,7 @@ class Souris {
         this.poids = poids;
         this.couleur = couleur;
         this.age = age;
+        this.esperanceVie = ESPERANCE_VIE_DEFAUT;
         System.out.println("Une nouvelle souris ! ");
     }
 
@@ -39,24 +40,44 @@ class Souris {
     public Souris(int poids, String couleur) {
         this.poids = poids;
         this.couleur = couleur;
-
-        System.out.println("Une nouvelle souris ! ");
+        this.esperanceVie = ESPERANCE_VIE_DEFAUT;
+        System.out.println("Une nouvelle souris !");
     }
 
     //constructeur de copie
     public Souris(Souris cloneSouris) {
         this.poids = cloneSouris.poids;
         this.couleur = cloneSouris.couleur;
-        this.age = age;
-        this.esperanceVie = esperanceVie * 4 / 5;
-
+        this.age = cloneSouris.age;
+        this.esperanceVie = cloneSouris.esperanceVie * 4 / 5;
+        this.clonee = true;
+        System.out.println("Clonage d’une souris !");
     }
 
     public String toString() {
-        return "Une souris " + couleur + ", " + clonee + ", de " + age + " mois et pesant " + poids + " grammes";
+        if (this.clonee) {
+            return "Une souris " + couleur + ", clonee, de " + age + " mois et pesant " + poids + " grammes";
+
+        } else {
+            return "Une souris " + couleur + " de " + age + " mois et pesant " + poids + " grammes";
+
+        }
+    }
+
+    public void vieillir() {
+        this.age += 1;
+        if (clonee & this.age > this.esperanceVie / 2) {
+            this.couleur = "verte";
+        }
+
     }
 
     public void evolue() {
+        for (int i = this.age; i < this.esperanceVie; i++) {
+            vieillir();
+
+        }
+
     }
 
 }
