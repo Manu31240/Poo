@@ -42,65 +42,25 @@ class Ecole {
          * Cette méthode affiche l'ancienneté moyenne des personnes fréquentant  l'école
          * et le nombre d'étudiants parmi eux
          */
-=======
-        epfl.add(new Secretaire("Sophie Scribona", 2005, "LMT", 5000));
-        epfl.afficherStatistiques();
-        epfl.afficherEPFLiens();
-    }
-}
-
-/**
-* La direction
-*/
-class Ecole {
-    private ArrayList<EPFLien> gens;
-
-    public Ecole(int nbPersonnes) {
-        gens = new ArrayList<EPFLien>();
-    }
-
-    public void add(EPFLien personne) {
-        if (personne != null) {
-            gens.add(personne);
-        }
-    }
-
-    /**
-    * Cette méthode affiche l'ancienneté moyenne des personnes fréquentant l'école
-    * et le nombre d'étudiants parmi eux
-    */
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
     public void afficherStatistiques() {
         int anneeCourante = Calendar.getInstance().get(Calendar.YEAR);
         int nbAnneesTotal = 0;
         int nbEtudiants = 0;
         for (EPFLien epflien : gens) {
             nbAnneesTotal = nbAnneesTotal + (anneeCourante - epflien.getAnnee());
-<<<<<<< HEAD
             if (epflien.estEtudiant()){
                 ++nbEtudiants;
             }
         }
         System.out.println("Parmi les " + gens.size() + " EPFLiens, " +
                 nbEtudiants + " sont des etudiants.");
-=======
-            if (epflien.estEtudiant()) {
-                ++nbEtudiants;
-            }
-        }
-        System.out.println("Parmi les " + gens.size() + " EPFLiens, " + nbEtudiants + " sont des etudiants.");
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
         double moyen = nbAnneesTotal;
         moyen /= gens.size();
         System.out.println("Ils sont ici depuis en moyenne " + moyen + " ans");
     }
 
-<<<<<<< HEAD
 
     // Cette méthode affiche les caractéristiques des personnes fréquentant  l'école
-=======
-    // Cette méthode affiche les caractéristiques des personnes fréquentant l'école
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
     public void afficherEPFLiens() {
         System.out.println("Liste des EPFLiens: ");
         for (EPFLien epflien : gens)
