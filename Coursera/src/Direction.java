@@ -69,13 +69,8 @@ class Ecole {
 }
 
 /**
-<<<<<<< HEAD
   * Les personnes fréquentant l'EPFL
   */
-=======
-* Les personnes fréquentant l'EPFL
-*/
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
 class EPFLien {
     private String nom;
     private int annee;
@@ -84,19 +79,11 @@ class EPFLien {
         this.nom = nom;
         this.annee = annee;
     }
-<<<<<<< HEAD
     
    //Cette méthode affiche les caractéristiques générales d'un EPFLien
     public void afficher() {
         System.out.println("   Nom : " + getNom());
         System.out.println("   Annee : " + getAnnee());
-=======
-
-    //Cette méthode affiche les caractéristiques générales d'un EPFLien
-    public void afficher() {
-        System.out.println(" Nom : " + getNom());
-        System.out.println(" Annee : " + getAnnee());
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
     }
 
     public String getNom() {
@@ -106,7 +93,6 @@ class EPFLien {
     public int getAnnee() {
         return annee;
     }
-<<<<<<< HEAD
     public boolean estEtudiant ()
         {
             return false;
@@ -117,17 +103,6 @@ class EPFLien {
 /**
   * Les étudiants
   */
-=======
-
-    public boolean estEtudiant() {
-        return false;
-    }
-}
-
-/**
-* Les étudiants
-*/
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
 class Etudiant extends EPFLien {
     private String section;
 
@@ -138,18 +113,13 @@ class Etudiant extends EPFLien {
 
     public void afficher() {
         super.afficher();
-<<<<<<< HEAD
         System.out.println("   Section : " + getSection());
-=======
-        System.out.println(" Section : " + getSection());
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
     }
 
     public String getSection() {
         return section;
     }
 
-<<<<<<< HEAD
     public boolean estEtudiant()
         {
             return true;
@@ -160,16 +130,6 @@ class Etudiant extends EPFLien {
 /**
   * Les étudiants régulier
   */
-=======
-    public boolean estEtudiant() {
-        return true;
-    }
-}
-
-/**
-* Les étudiants régulier
-*/
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
 class EtudiantRegulier extends Etudiant {
     private double moyenne;
 
@@ -181,22 +141,13 @@ class EtudiantRegulier extends Etudiant {
     public void afficher() {
         System.out.println("Etudiant regulier:");
         super.afficher();
-<<<<<<< HEAD
         System.out.println("   Moyenne : " + moyenne);
-=======
-        System.out.println(" Moyenne : " + moyenne);
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
     }
 }
 
 /**
-<<<<<<< HEAD
   * Les étudiants  d'échange
   */
-=======
-* Les étudiants d'échange
-*/
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
 class EtudiantEchange extends Etudiant {
     private String uniOrigine;
 
@@ -208,11 +159,7 @@ class EtudiantEchange extends Etudiant {
     public void afficher() {
         System.out.println("Etudiant d'echange:");
         super.afficher();
-<<<<<<< HEAD
         System.out.println("   Uni d'origine : " + getUniOrigine());
-=======
-        System.out.println(" Uni d'origine : " + getUniOrigine());
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
     }
 
     public String getUniOrigine() {
@@ -221,13 +168,8 @@ class EtudiantEchange extends Etudiant {
 }
 
 /**
-<<<<<<< HEAD
   * Le personnel de l'EPFL
   */
-=======
-* Le personnel de l'EPFL
-*/
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
 class Personnel extends EPFLien {
     private String labo;
     private int salaire;
@@ -240,13 +182,8 @@ class Personnel extends EPFLien {
 
     public void afficher() {
         super.afficher();
-<<<<<<< HEAD
         System.out.println("   Laboratoire : " + getLabo());
         System.out.println("   Salaire : " + getSalaire());
-=======
-        System.out.println(" Laboratoire : " + getLabo());
-        System.out.println(" Salaire : " + getSalaire());
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
     }
 
     public String getLabo() {
@@ -269,11 +206,7 @@ class Enseignant extends Personnel {
     public void afficher() {
         System.out.println("Enseignant:");
         super.afficher();
-<<<<<<< HEAD
         System.out.println("   Section d'enseignement : " + getSection());
-=======
-        System.out.println(" Section d'enseignement : " + getSection());
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
     }
 
     public String getSection() {
@@ -290,8 +223,4 @@ class Secretaire extends Personnel {
         System.out.println("Secretaire:");
         super.afficher();
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 20267e1d7eb62a5d2cb5d793bea58cec3f97d9b9
