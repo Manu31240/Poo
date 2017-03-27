@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;NB_REGLE_GAGNANT&apos; in &apos;Joueur&apos; to &apos;MIN_GAGNANT&apos;&#x0D;&#x0A;- Original project: &apos;JeuDeDes_Cycle5&apos;&#x0D;&#x0A;- Original element: &apos;Joueur.NB_REGLE_GAGNANT&apos;&#x0D;&#x0A;- Renamed element: &apos;Joueur.MIN_GAGNANT&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;NB_REGLE_GAGNANT&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;{Joueur.java[Joueur^NB_REGLE_GAGNANT" name="MIN_GAGNANT" references="true" setter="false" stamp="1472800909242" textual="false" version="1.0"/>
+</session>

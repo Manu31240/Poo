@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.jboss.tools.vpe.spring;singleton:=true
+Archiver-Version: Plexus Archiver
+Built-By: hudson
+Require-Bundle: org.eclipse.ui;bundle-version="3.7.0",org.eclipse.core
+ .runtime;bundle-version="3.7.0",org.jboss.tools.vpe,org.mozilla.xpcom
+ ,org.eclipse.jface.text;bundle-version="3.7.0",org.jboss.tools.jst.we
+ b.ui
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Eclipse-SourceReferences: scm:git:https://github.com/jbosstools/jbosst
+ ools-vpe.git;path="plugins/org.jboss.tools.vpe.spring";commitId=a9273
+ 884abd84833235909a4db6ccde81da41f01
+Bundle-Vendor: %vendorName
+Bundle-Name: %bundleName
+Bundle-Version: 3.7.0.Final-v20150924-2224-B45
+Bundle-Localization: plugin
+Bundle-Activator: org.jboss.tools.vpe.spring.SpringTemplatePlugin
+Created-By: Apache Maven 3.2.5
+Build-Jdk: 1.8.0_60
+Eclipse-BundleShape: jar
+

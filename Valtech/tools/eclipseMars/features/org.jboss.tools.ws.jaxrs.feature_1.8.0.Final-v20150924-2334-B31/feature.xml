@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.jboss.tools.ws.jaxrs.feature"
+      label="%featureName"
+      version="1.8.0.Final-v20150924-2334-B31"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="org.jboss.tools.ws.jaxrs.core"
+         download-size="282"
+         install-size="693"
+         version="1.8.0.Final-v20150924-2334-B31"
+         unpack="false"/>
+
+   <plugin
+         id="org.jboss.tools.ws.jaxrs.ui"
+         download-size="251"
+         install-size="534"
+         version="1.8.0.Final-v20150924-2334-B31"
+         unpack="false"/>
+
+</feature>
