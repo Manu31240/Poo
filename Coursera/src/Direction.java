@@ -4,24 +4,23 @@ import java.util.ArrayList;
 /**
  * Classe principale
    */
-class Direction 
-{
+class Direction {
     public static void main(String[] args) {
         Ecole epfl = new Ecole();
         epfl.add(new EtudiantRegulier("Gaston Peutimide", 2013, "SSC", 6.0));
         epfl.add(new EtudiantRegulier("Yvan Rattrapeur", 2011, "SSC", 2.5));
         epfl.add(new EtudiantEchange("Bjorn Borgue", 2012, "Informatique", "KTH"));
         epfl.add(new Enseignant("Mathieu Matheu", 1998, "LMEP", 10000, "Physique"));
-        epfl.add(new  Secretaire("Sophie Scribona", 2005, "LMT", 5000));
+        epfl.add(new Secretaire("Sophie Scribona", 2005, "LMT", 5000));
         epfl.afficherStatistiques();
         epfl.afficherEPFLiens();
     }
 
 }
 
- /**
-  * La direction
-  */
+/**
+ * La direction
+ */
 
 class Ecole {
     private ArrayList<EPFLien> gens;
@@ -30,35 +29,31 @@ class Ecole {
         gens = new ArrayList<EPFLien>();
     }
 
-    public void add(EPFLien personne)
-        {
-            if (personne != null)
-            {
-                gens.add(personne);
-            }
+    public void add(EPFLien personne) {
+        if (personne != null) {
+            gens.add(personne);
         }
-    
-        /**
-         * Cette méthode affiche l'ancienneté moyenne des personnes fréquentant  l'école
-         * et le nombre d'étudiants parmi eux
-         */
+    }
+
+    /**
+     * Cette méthode affiche l'ancienneté moyenne des personnes fréquentant  l'école
+     * et le nombre d'étudiants parmi eux
+     */
     public void afficherStatistiques() {
         int anneeCourante = Calendar.getInstance().get(Calendar.YEAR);
         int nbAnneesTotal = 0;
         int nbEtudiants = 0;
         for (EPFLien epflien : gens) {
             nbAnneesTotal = nbAnneesTotal + (anneeCourante - epflien.getAnnee());
-            if (epflien.estEtudiant()){
+            if (epflien.estEtudiant()) {
                 ++nbEtudiants;
             }
         }
-        System.out.println("Parmi les " + gens.size() + " EPFLiens, " +
-                nbEtudiants + " sont des etudiants.");
+        System.out.println("Parmi les " + gens.size() + " EPFLiens, " + nbEtudiants + " sont des etudiants.");
         double moyen = nbAnneesTotal;
         moyen /= gens.size();
         System.out.println("Ils sont ici depuis en moyenne " + moyen + " ans");
     }
-
 
     // Cette méthode affiche les caractéristiques des personnes fréquentant  l'école
     public void afficherEPFLiens() {
@@ -79,8 +74,8 @@ class EPFLien {
         this.nom = nom;
         this.annee = annee;
     }
-    
-   //Cette méthode affiche les caractéristiques générales d'un EPFLien
+
+    //Cette méthode affiche les caractéristiques générales d'un EPFLien
     public void afficher() {
         System.out.println("   Nom : " + getNom());
         System.out.println("   Annee : " + getAnnee());
@@ -93,10 +88,10 @@ class EPFLien {
     public int getAnnee() {
         return annee;
     }
-    public boolean estEtudiant ()
-        {
-            return false;
-        }
+
+    public boolean estEtudiant() {
+        return false;
+    }
 
 }
 
@@ -120,11 +115,10 @@ class Etudiant extends EPFLien {
         return section;
     }
 
-    public boolean estEtudiant()
-        {
-            return true;
-        }
-    
+    public boolean estEtudiant() {
+        return true;
+    }
+
 }
 
 /**
